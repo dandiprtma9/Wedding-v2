@@ -1,35 +1,56 @@
-const music = document.getElementById("music");
-const openButton = document.getElementById("openInvitation");
-const musicControl = document.getElementById("musicControl");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Musik diputar saat tombol Buka Undangan diklik
-if (openButton) {
-    openButton.addEventListener("click", () => {
-        music.play().catch(err => console.log(err));
-    });
-}
+    const music = document.getElementById("music");
+    const openButton = document.getElementById("openInvitation");
+    const musicControl = document.getElementById("musicControl");
 
-// Tombol Play / Pause
-if (musicControl) {
+    if (!music || !openButton || !musicControl) {
+        console.error("Elemen HTML tidak ditemukan.");
+        return;
+    }
 
     let isPlaying = false;
 
-    musicControl.addEventListener("click", () => {
+    openButton.addEventListener("click", async () => {
 
-        if (isPlaying) {
+        try {
 
-            music.pause();
-            musicControl.innerHTML = "🔇";
-            isPlaying = false;
+            await music.play();
 
-        } else {
-
-            music.play().catch(err => console.log(err));
-            musicControl.innerHTML = "🎵";
             isPlaying = true;
+
+            musicControl.innerHTML = "🎵";
+
+        } catch (err) {
+
+            console.error(err);
 
         }
 
     });
 
-}
+    musicControl.addEventListener("click", async () => {
+
+        if (isPlaying) {
+
+            music.pause();
+
+            isPlaying = false;
+
+            musicControl.innerHTML = "🔇";
+
+        } else {
+
+            try {
+                await music.play();
+                isPlaying = true;
+                musicControl.innerHTML = "🎵";
+            } catch (err) {
+                console.error(err);
+            }
+
+        }
+
+    });
+
+});

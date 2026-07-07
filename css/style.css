@@ -122,6 +122,8 @@ MAIN
 
 #main{
 
+display:none;
+
 padding:100px 20px;
 
 background:#faf8f4;
@@ -604,5 +606,62 @@ box-shadow:0 10px 25px rgba(0,0,0,.25);
     position:relative;
 
     z-index:2;
+
+}
+/* ==========================
+   WEDDING GIFT
+========================== */
+
+#gift{
+
+    padding:80px 20px;
+
+    background:#faf8f4;
+
+    text-align:center;
+
+}
+
+.gift-card{
+
+    max-width:500px;
+
+    margin:40px auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    border:2px solid #d4af37;
+
+}
+
+.gift-card h3{
+
+    color:#c79a00;
+
+    margin-bottom:15px;
+
+}
+
+.gift-card h1{
+
+    font-size:35px;
+
+    letter-spacing:3px;
+
+    color:#444;
+
+    margin-bottom:15px;
+
+}
+
+.gift-card p{
+
+    margin-bottom:20px;
 
 }
