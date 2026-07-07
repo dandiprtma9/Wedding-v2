@@ -1,0 +1,97 @@
+.flower{
+
+    position:fixed;
+
+    width:60px;
+
+    pointer-events:none;
+
+    animation:fall 12s linear infinite;
+
+}
+
+.f1{
+    left:5%;
+    top:-100px;
+}
+
+.f2{
+    left:30%;
+    top:-180px;
+    animation-delay:3s;
+}
+
+.f3{
+    left:60%;
+    top:-150px;
+    animation-delay:6s;
+}
+
+.f4{
+    left:85%;
+    top:-120px;
+    animation-delay:9s;
+}
+
+@keyframes fall{
+
+0%{
+
+transform:
+
+translateY(-100px)
+
+rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(120vh)
+
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+    from{
+
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(360deg);
+
+    }
+
+
+#musicControl{
+
+transition:.4s;
+
+}
+
+#musicControl:hover{
+
+transform:scale(1.15);
+
+}
